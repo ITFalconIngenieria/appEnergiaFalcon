@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "appEnergia",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

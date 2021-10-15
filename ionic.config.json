@@ -1,0 +1,7 @@
+{
+  "name": "appEnergia",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
