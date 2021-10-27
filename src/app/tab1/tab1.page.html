@@ -1,17 +1,94 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            Falcon ingenieria
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <br>
+    <div style="display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 10px 0px 10px;">
+        <div style="display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;">
+            <img style="width: 23%; height: 23%;" src="assets/imagenes/antena.png">
+            <p style="font-size: 20px;
+        color: #cf9e56;
+        font-weight: bold; margin-left: 8px;">2.36 w</p>
+        </div>
+        <div style="display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;">
+            <img style="width: 23%; height: 23%;" src="assets/imagenes/energia-connect.png">
+            <p style="font-size: 20px;
+        color: #cf9e56;
+        font-weight: bold; margin-left: 8px;">1,456 w</p>
+        </div>
+    </div>
+    <div style="width: 85%; margin: auto;">
+        <canvas #lineCanvas></canvas>
+    </div>
+    <br>
+    <br>
+    <ion-card>
+        <ion-card-content>
+            <ion-list>
+                <ion-item>
+                    <ion-avatar slot="start">
+                        <img src="assets/imagenes/energia-connect.png">
+                    </ion-avatar>
+                    <ion-label style="display: flex; flex-direction: row; justify-content: space-between;">
+                        <p style="font-size: 16px; color: #444444;">{{ listData[4]?.id.split('/')[1] }}</p>
+                        <p style="font-size: 13px; color: #6e6e6e;">{{ listData[4]?.value | number:'1.2-2':'en_US'}} {{ listData[4]?.id.split('/')[2] }}</p>
+                    </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-avatar slot="start">
+                        <img src="assets/imagenes/solar.png">
+                    </ion-avatar>
+                    <ion-label style="display: flex; flex-direction: row; justify-content: space-between;">
+                        <p style="font-size: 16px; color: #444444;">{{ listData[0]?.id.split('/')[1] }}</p>
+                        <p style="font-size: 13px; color: #6e6e6e;">{{ listData[0]?.value | number:'1.2-2':'en_US'}} {{ listData[0]?.id.split('/')[2] }}</p>
+                    </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-avatar slot="start">
+                        <img src="assets/imagenes/connect.png">
+                    </ion-avatar>
+                    <ion-label style="display: flex; flex-direction: row; justify-content: space-between;">
+                        <p style="font-size: 16px; color: #444444;">{{ listData[3]?.id.split('/')[1] }}</p>
+                        <p style="font-size: 13px; color: #6e6e6e;">{{ listData[3]?.value | number:'1.1-3':'en_US'}} {{ listData[3]?.id.split('/')[2] }}</p>
+                    </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-avatar slot="start">
+                        <img src="assets/imagenes/aire.png">
+                    </ion-avatar>
+                    <ion-label style="display: flex; flex-direction: row; justify-content: space-between;">
+                        <p style="font-size: 16px; color: #444444;">{{ listData[2]?.id.split('/')[1] }}</p>
+                        <p style="font-size: 13px; color: #6e6e6e;">{{ listData[2]?.value | number:'1.2-2':'en_US'}} {{ listData[2]?.id.split('/')[2] }}</p>
+                    </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-avatar slot="start">
+                        <img src="assets/imagenes/on.png">
+                    </ion-avatar>
+                    <ion-label style="display: flex; flex-direction: row; justify-content: space-between;">
+                        <p style="font-size: 16px; color: #444444;">{{ listData[1]?.id.split('/')[1] }}</p>
+                        <p style="font-size: 13px; color: #6e6e6e;">{{ listData[1]?.value | number:'1.2-2':'en_US'}} {{ listData[1]?.id.split('/')[2] }}</p>
+                    </ion-label>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+    <br>
+    <br>
+    <br>
 </ion-content>

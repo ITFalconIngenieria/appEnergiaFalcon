@@ -1,17 +1,48 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            Falcon ingenieria
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <div style="display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 55%;
+    margin: auto;
+    padding: 2px;">
+        <ion-icon style="font-size: 30px;" (click)="anterior()" name="chevron-back-outline"></ion-icon>
+        <ion-icon style="font-size: 30px;" (click)="siguiente()" name="chevron-forward-outline"></ion-icon>
+    </div>
+
+    <div class="container" *ngIf="skeleton">
+        <ion-skeleton-text animated style="height: 65%;"></ion-skeleton-text>
+        <ion-skeleton-text animated style="height: 50%;"></ion-skeleton-text>
+        <ion-skeleton-text animated style="height: 58%;"></ion-skeleton-text>
+        <ion-skeleton-text animated style="height: 70%;"></ion-skeleton-text>
+        <ion-skeleton-text animated style="height: 40%;"></ion-skeleton-text>
+        <ion-skeleton-text animated style="height: 50%;"></ion-skeleton-text>
+        <ion-skeleton-text animated style="height: 75%;"></ion-skeleton-text>
+        <ion-skeleton-text animated style="height: 65%;"></ion-skeleton-text>
+    </div>
+    <div style="width: 85%; margin: auto;">
+        <canvas #lineCanvas></canvas>
+    </div>
+
+
+    <ion-segment (ionChange)="segmentChanged($event)" value="dia">
+        <ion-segment-button value="anio">
+            <ion-label>AÑO</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="mes">
+            <ion-label>MES</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="dia">
+            <ion-label>DIA</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+
 </ion-content>
